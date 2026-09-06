@@ -1,0 +1,12 @@
+C:\Users\harsh\OneDrive\Desktop\AI-DevOps\src\main\java\com\devopsrag\platform\controller\DebugController.java
+C:\Users\harsh\OneDrive\Desktop\AI-DevOps\src\main\java\com\devopsrag\platform\controller\HealthController.java
+C:\Users\harsh\OneDrive\Desktop\AI-DevOps\src\main\java\com\devopsrag\platform\controller\IngestionController.java
+C:\Users\harsh\OneDrive\Desktop\AI-DevOps\src\main\java\com\devopsrag\platform\model\DocumentChunk.java
+C:\Users\harsh\OneDrive\Desktop\AI-DevOps\src\main\java\com\devopsrag\platform\model\DocumentChunkDto.java
+C:\Users\harsh\OneDrive\Desktop\AI-DevOps\src\main\java\com\devopsrag\platform\model\RawDocument.java
+C:\Users\harsh\OneDrive\Desktop\AI-DevOps\src\main\java\com\devopsrag\platform\PlatformApplication.java
+C:\Users\harsh\OneDrive\Desktop\AI-DevOps\src\main\java\com\devopsrag\platform\repository\DocumentChunkRepository.java
+C:\Users\harsh\OneDrive\Desktop\AI-DevOps\src\main\java\com\devopsrag\platform\service\ChunkingService.java
+C:\Users\harsh\OneDrive\Desktop\AI-DevOps\src\main\java\com\devopsrag\platform\service\DocumentLoaderService.java
+C:\Users\harsh\OneDrive\Desktop\AI-DevOps\src\main\java\com\devopsrag\platform\service\EmbeddingService.java
+C:\Users\harsh\OneDrive\Desktop\AI-DevOps\src\main\java\com\devopsrag\platform\service\IngestionService.java
