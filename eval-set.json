@@ -1,0 +1,94 @@
+[
+  {
+    "query": "Why is PaymentService returning 503?",
+    "expectedSource": "INC-4821.md"
+  },
+  {
+    "query": "What caused the PaymentService connection pool exhaustion?",
+    "expectedSource": "INC-4821.md"
+  },
+  {
+    "query": "What changed in deployment 827?",
+    "expectedSource": "deployment-827.md"
+  },
+  {
+    "query": "How do I troubleshoot HikariPool connection errors?",
+    "expectedSource": "payment-runbook.md"
+  },
+  {
+    "query": "PaymentService checkout is slow and timing out",
+    "expectedSource": "INC-4821.md"
+  },
+  {
+    "query": "Which deployment changed the database connection settings?",
+    "expectedSource": "deployment-827.md"
+  },
+  {
+    "query": "What is the resolution for incident INC-4821?",
+    "expectedSource": "INC-4821.md"
+  },
+  {
+    "query": "AuthService is rejecting valid login tokens",
+    "expectedSource": "INC-4801.md"
+  },
+  {
+    "query": "How do I resolve auth token expiry issues?",
+    "expectedSource": "INC-4801.md"
+  },
+  {
+    "query": "OrderService is creating duplicate orders",
+    "expectedSource": "INC-4805.md"
+  },
+  {
+    "query": "What steps should I take for order duplication bugs?",
+    "expectedSource": "INC-4805.md"
+  },
+  {
+    "query": "InventoryService showing incorrect stock counts",
+    "expectedSource": "INC-4810.md"
+  },
+  {
+    "query": "How to fix inventory race condition issues?",
+    "expectedSource": "INC-4810.md"
+  },
+  {
+    "query": "NotificationService failing to send emails",
+    "expectedSource": "INC-4812.md"
+  },
+  {
+    "query": "ShippingService API is timing out",
+    "expectedSource": "INC-4815.md"
+  },
+  {
+    "query": "What is the on-call escalation process?",
+    "expectedSource": "on-call-escalation.md"
+  },
+  {
+    "query": "What is the general process for responding to an incident?",
+    "expectedSource": "general-incident-response.md"
+  },
+  {
+    "query": "Which service had a memory leak issue?",
+    "expectedSource": "INC-4818.md"
+  },
+  {
+    "query": "People keep complaining they can't get into their accounts.",
+    "expectedSource": "INC-4801.md"
+  },
+  {
+    "query": "Bro the checkout button is making folks buy the same thing twice!",
+    "expectedSource": "INC-4805.md"
+  },
+  {
+    "query": "We are seeing optimistic locking failure for SKU-992 in the logs.",
+    "expectedSource": "INC-4810.md"
+  },
+  {
+    "query": "What exact property do I change to fix HikariPool starvation?",
+    "expectedSource": "payment-runbook.md"
+  },
+  {
+    "query": "Something broke after we pushed the new fraud model yesterday, what happened?",
+    "expectedSource": "INC-4818.md"
+  }
+]
