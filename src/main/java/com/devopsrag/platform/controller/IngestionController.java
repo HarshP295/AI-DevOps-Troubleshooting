@@ -2,12 +2,14 @@ package com.devopsrag.platform.controller;
 
 import com.devopsrag.platform.service.IngestionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Map;
 
+@Profile("!cloud")
 @RestController
 @RequestMapping("/api")
 public class IngestionController {

@@ -1,0 +1,27 @@
+# Maven build output
+target/
+
+# Local environment / secrets — NEVER commit these
+.env
+*.env
+.env.local
+.env.*.local
+
+# IDE files
+.idea/
+*.iml
+*.xml.bak
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Spring Boot dev logs
+ingest_error.log
+
+# Frontend build output
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+

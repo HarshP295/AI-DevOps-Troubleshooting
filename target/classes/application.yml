@@ -1,19 +1,30 @@
 server:
-  port: 8081
+  port: ${PORT:8081}
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/devops_rag?options=-c%20timezone=Asia/Kolkata
-    username: devops_user
-    password: devops_password
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/devops_rag?options=-c%20timezone=Asia/Kolkata}
+    username: ${DB_USER:devops_user}
+    password: ${DB_PASSWORD:devops_password}
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
       ddl-auto: update
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
         jdbc:
           time_zone: UTC
     show-sql: true
+
+app:
+  ollama:
+    base-url: ${OLLAMA_BASE_URL:http://localhost:11434}
+  grounding:
+    threshold: ${GROUNDING_THRESHOLD:0.5}
+  ai:
+    provider: ${AI_PROVIDER:ollama}
+  gemini:
+    api-key: ${GEMINI_API_KEY:}
+    embedding-model: ${GEMINI_EMBEDDING_MODEL:gemini-embedding-001}
+    llm-model: ${GEMINI_LLM_MODEL:gemini-3.5-flash-lite}

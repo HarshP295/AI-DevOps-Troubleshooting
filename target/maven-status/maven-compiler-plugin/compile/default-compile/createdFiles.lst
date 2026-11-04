@@ -1,3 +1,5 @@
+com\devopsrag\platform\provider\GeminiEmbeddingProvider.class
+com\devopsrag\platform\provider\LlmProvider.class
 com\devopsrag\platform\service\IngestionService.class
 com\devopsrag\platform\model\DocumentChunkDto.class
 com\devopsrag\platform\service\DocumentLoaderService$1.class
@@ -7,11 +9,15 @@ com\devopsrag\platform\model\DocumentChunk.class
 com\devopsrag\platform\controller\SearchController.class
 com\devopsrag\platform\controller\IngestionController.class
 com\devopsrag\platform\service\EmbeddingService.class
+com\devopsrag\platform\provider\EmbeddingProvider.class
 com\devopsrag\platform\controller\DebugController.class
 com\devopsrag\platform\repository\DocumentChunkRepository.class
 com\devopsrag\platform\PlatformApplication.class
 com\devopsrag\platform\service\ChunkingService.class
+com\devopsrag\platform\provider\OllamaEmbeddingProvider.class
+com\devopsrag\platform\provider\OllamaLlmProvider.class
 com\devopsrag\platform\controller\HealthController.class
+com\devopsrag\platform\provider\GeminiLlmProvider.class
 com\devopsrag\platform\model\RawDocument.class
 com\devopsrag\platform\service\DocumentLoaderService.class
 com\devopsrag\platform\service\RetrievalService.class

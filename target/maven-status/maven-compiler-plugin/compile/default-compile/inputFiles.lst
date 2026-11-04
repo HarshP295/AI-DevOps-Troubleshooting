@@ -16,6 +16,12 @@ C:\Users\harsh\OneDrive\Desktop\AI-DevOps\src\main\java\com\devopsrag\platform\m
 C:\Users\harsh\OneDrive\Desktop\AI-DevOps\src\main\java\com\devopsrag\platform\model\SimilaritySearchResult.java
 C:\Users\harsh\OneDrive\Desktop\AI-DevOps\src\main\java\com\devopsrag\platform\model\SynthesisResult.java
 C:\Users\harsh\OneDrive\Desktop\AI-DevOps\src\main\java\com\devopsrag\platform\PlatformApplication.java
+C:\Users\harsh\OneDrive\Desktop\AI-DevOps\src\main\java\com\devopsrag\platform\provider\EmbeddingProvider.java
+C:\Users\harsh\OneDrive\Desktop\AI-DevOps\src\main\java\com\devopsrag\platform\provider\GeminiEmbeddingProvider.java
+C:\Users\harsh\OneDrive\Desktop\AI-DevOps\src\main\java\com\devopsrag\platform\provider\GeminiLlmProvider.java
+C:\Users\harsh\OneDrive\Desktop\AI-DevOps\src\main\java\com\devopsrag\platform\provider\LlmProvider.java
+C:\Users\harsh\OneDrive\Desktop\AI-DevOps\src\main\java\com\devopsrag\platform\provider\OllamaEmbeddingProvider.java
+C:\Users\harsh\OneDrive\Desktop\AI-DevOps\src\main\java\com\devopsrag\platform\provider\OllamaLlmProvider.java
 C:\Users\harsh\OneDrive\Desktop\AI-DevOps\src\main\java\com\devopsrag\platform\repository\DocumentChunkDistance.java
 C:\Users\harsh\OneDrive\Desktop\AI-DevOps\src\main\java\com\devopsrag\platform\repository\DocumentChunkRepository.java
 C:\Users\harsh\OneDrive\Desktop\AI-DevOps\src\main\java\com\devopsrag\platform\service\ChunkingService.java
