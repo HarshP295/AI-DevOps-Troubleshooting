@@ -1,16 +1,21 @@
 import React, { useState, useRef, useEffect } from 'react';
 
-export default function SearchBar({ onSubmit, isLoading }) {
-  const [query, setQuery] = useState('');
+const EXAMPLE_QUESTIONS = [
+  'Why is PaymentService returning 503?',
+  'People keep complaining they can’t get into their accounts.',
+  'How do I troubleshoot HikariPool connection errors?',
+];
+
+export default function SearchBar({ onSubmit, isLoading, initialValue, hasResponse }) {
+  const [query, setQuery] = useState(initialValue || '');
   const [focused, setFocused] = useState(false);
   const inputRef = useRef(null);
 
-  const SUGGESTIONS = [
-    'Why is PaymentService returning 503?',
-    'What caused the connection pool exhaustion?',
-    'How do I troubleshoot HikariPool errors?',
-    'What changed in deployment 827?',
-  ];
+  useEffect(() => {
+    if (initialValue !== undefined && initialValue !== null && initialValue !== '') {
+      setQuery(initialValue);
+    }
+  }, [initialValue]);
 
   const handleSubmit = (e) => {
     e?.preventDefault();
@@ -26,9 +31,10 @@ export default function SearchBar({ onSubmit, isLoading }) {
     }
   };
 
-  const handleSuggestion = (text) => {
+  const handleExampleClick = (text) => {
+    if (isLoading) return;
     setQuery(text);
-    inputRef.current?.focus();
+    onSubmit(text);
   };
 
   return (
@@ -46,7 +52,7 @@ export default function SearchBar({ onSubmit, isLoading }) {
           onSubmit={handleSubmit}
           style={{
             display: 'flex', alignItems: 'center', gap: '12px',
-            background: '#161B22', borderRadius: focused ? '9px' : '9px',
+            background: '#161B22', borderRadius: '9px',
             padding: '14px 16px',
           }}
         >
@@ -102,22 +108,38 @@ export default function SearchBar({ onSubmit, isLoading }) {
         </form>
       </div>
 
-      {/* Suggestions */}
-      {!isLoading && !query && (
+      {/* Example questions */}
+      {!hasResponse && (
         <div style={{ marginTop: '12px', display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-          <span style={{ fontSize: '12px', color: '#484F58', alignSelf: 'center', marginRight: '4px' }}>Try:</span>
-          {SUGGESTIONS.map((s) => (
+          {EXAMPLE_QUESTIONS.map((s) => (
             <button
               key={s}
-              onClick={() => handleSuggestion(s)}
+              type="button"
+              onClick={() => handleExampleClick(s)}
+              disabled={isLoading}
               style={{
-                background: '#161B22', border: '1px solid #30363D', borderRadius: '20px',
-                padding: '4px 12px', fontSize: '12px', color: '#8B949E',
-                cursor: 'pointer', fontFamily: 'Inter, sans-serif',
-                transition: 'border-color 0.15s, color 0.15s',
+                background: '#161B22',
+                border: '1px solid #21262D',
+                borderRadius: '6px',
+                padding: '4px 10px',
+                fontSize: '12px',
+                fontFamily: 'JetBrains Mono, monospace',
+                color: '#8B949E',
+                cursor: isLoading ? 'not-allowed' : 'pointer',
+                transition: 'border-color 0.15s, color 0.15s, background-color 0.15s',
               }}
-              onMouseEnter={e => { e.target.style.borderColor = '#2F81F7'; e.target.style.color = '#2F81F7'; }}
-              onMouseLeave={e => { e.target.style.borderColor = '#30363D'; e.target.style.color = '#8B949E'; }}
+              onMouseEnter={e => {
+                if (!isLoading) {
+                  e.currentTarget.style.borderColor = '#30363D';
+                  e.currentTarget.style.color = '#E6EDF3';
+                  e.currentTarget.style.background = '#21262D';
+                }
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.borderColor = '#21262D';
+                e.currentTarget.style.color = '#8B949E';
+                e.currentTarget.style.background = '#161B22';
+              }}
             >
               {s}
             </button>

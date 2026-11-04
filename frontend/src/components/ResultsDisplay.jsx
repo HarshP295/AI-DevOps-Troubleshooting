@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function Chip({ label, color = 'accent' }) {
   const styles = {
@@ -50,6 +50,20 @@ const SUGGESTED_QUERIES = [
 
 export default function ResultsDisplay({ response, isLoading, query, onQueryClick }) {
   const [contextOpen, setContextOpen] = useState(false);
+  const [coldStart, setColdStart] = useState(false);
+
+  useEffect(() => {
+    let timer;
+    if (isLoading) {
+      setColdStart(false);
+      timer = setTimeout(() => {
+        setColdStart(true);
+      }, 6000);
+    } else {
+      setColdStart(false);
+    }
+    return () => clearTimeout(timer);
+  }, [isLoading]);
 
   if (isLoading) {
     return (
@@ -60,7 +74,11 @@ export default function ResultsDisplay({ response, isLoading, query, onQueryClic
               <span key={i} style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#2F81F7', animation: `pulse-dot 1.2s ease-in-out ${i * 0.2}s infinite`, display: 'inline-block' }} />
             ))}
           </div>
-          <span style={{ fontSize: '13px', color: '#8B949E' }}>Searching knowledge base and synthesizing response via llama3.2...</span>
+          <span style={{ fontSize: '13px', color: '#8B949E' }}>
+            {coldStart
+              ? 'Waking up the server, the first request can take up to a minute…'
+              : 'Searching knowledge base and synthesizing response via llama3.2...'}
+          </span>
         </div>
         <SkeletonCard />
       </div>

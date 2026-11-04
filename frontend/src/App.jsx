@@ -12,6 +12,8 @@ const PAGE_TITLES = {
   Settings: { title: 'Settings', subtitle: 'Pipeline Configuration' },
 };
 
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080';
+
 function App() {
   const [activePage, setActivePage] = useState('Query');
   const [isLoading, setIsLoading] = useState(false);
@@ -28,7 +30,7 @@ function App() {
     setResponse(null);
 
     try {
-      const res = await fetch('http://localhost:8081/api/query', {
+      const res = await fetch(`${API_BASE_URL}/api/query`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ question: searchQuery }),
@@ -124,7 +126,12 @@ function App() {
                 </div>
               )}
 
-              <SearchBar onSubmit={handleSearch} isLoading={isLoading} initialValue={pendingQuery} />
+              <SearchBar
+                onSubmit={handleSearch}
+                isLoading={isLoading}
+                initialValue={pendingQuery}
+                hasResponse={!!response}
+              />
 
               {error && (
                 <div style={{
